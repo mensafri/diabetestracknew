@@ -1,5 +1,6 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
+import Register from './Auth/Register';
 
 export default function Dashboard({ auth }) {
     return (
@@ -16,6 +17,9 @@ export default function Dashboard({ auth }) {
                     </div>
                 </div>
             </div>
+          
+
+
         </AuthenticatedLayout>
     );
 }
