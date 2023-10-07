@@ -31,7 +31,7 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
-    Route::get('/dashboar/create', [AdminController::class, 'create'])->name('admin.create');
+    Route::post('/dashboar/create', [AdminController::class, 'create'])->name('admin.create');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
