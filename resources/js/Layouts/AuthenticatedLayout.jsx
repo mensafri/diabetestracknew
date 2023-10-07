@@ -107,7 +107,7 @@ export default function Authenticated({ user, header, children }) {
                             <ResponsiveNavLink href={route('profile.edit')}>Profile</ResponsiveNavLink>
                             <ResponsiveNavLink method="post" href={route('logout')} as="button">
                                 Log Out
-                            </ResponsiveNavLink>
+                            </ResponsiveNavLink>4
                         </div>
                     </div>
                 </div>
@@ -115,7 +115,7 @@ export default function Authenticated({ user, header, children }) {
 
             {header && (
                 <header className="bg-white shadow">
-                    <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">{header}</div>
+                    <div className=" mx-auto py-6 px-4 sm:px-6 lg:px-4">{header}</div>
                 </header>
             )}
 

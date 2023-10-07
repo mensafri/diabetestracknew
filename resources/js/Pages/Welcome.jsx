@@ -4,7 +4,7 @@ import { Link, Head } from '@inertiajs/react';
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     const heroimg = `${window.location.pathname}storage/assets/img/heroimg.svg`
-    console.log(heroimg);
+    
     return (
         <>
             <Head title="Welcome" />
