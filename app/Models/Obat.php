@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Obat extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
+    public function pasien()
+    {
+        return $this->hasMany(Pasien::class, 'pasien_id', 'id');
+    }
 }

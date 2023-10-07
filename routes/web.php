@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DokterController;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\PerawatController;
@@ -28,18 +29,19 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+    Route::get('/dashboar/create', [AdminController::class, 'create'])->name('admin.create');
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/dokter', [DokterController::class, 'index']);
-    Route::get('/perawat', [PerawatController::class, 'index']);
-    Route::get('/pasien', [PasienController::class, 'index']);
+    Route::get('/dokter', [DokterController::class, 'index'])->name('dokter.index');
+
+    Route::get('/perawat', [PerawatController::class, 'index'])->name('perawat.index');
+
+    Route::get('/pasien', [PasienController::class, 'index'])->name('pasien.index');
 });
 
 require __DIR__ . '/auth.php';
