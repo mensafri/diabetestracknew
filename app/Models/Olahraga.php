@@ -11,6 +11,6 @@ class Olahraga extends Model
     protected $guarded = ['id'];
     public function pasien()
     {
-        return $this->hasMany(Pasien::class, 'pasien_id', 'id');
+        return $this->belongsTo(Pasien::class, 'pasien_id', 'id');
     }
 }
