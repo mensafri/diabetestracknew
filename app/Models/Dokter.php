@@ -24,4 +24,8 @@ class Dokter extends Model
     {
         return $this->user->full_name;
     }
+    public static function getAllDokter()
+    {
+        return self::all();
+    }
 }

@@ -78,7 +78,7 @@ export default function RegisterPerawat({ list_dokter }) {
                             onChange={(e) => setData('id_dokter', e.target.value)}
                             required
                         >
-                            {list_dokter.map((dokter) => <option value={dokter.user.id} key={dokter.id}>{dokter.nama}</option>)}
+                            {list_dokter.map((dokter) => <option value={dokter.id} key={dokter.id}>{dokter.nama}</option>)}
                         </select>
                         <InputError message={errors.role} className="mt-2" />
                     </div>
