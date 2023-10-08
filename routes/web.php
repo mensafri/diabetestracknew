@@ -41,6 +41,8 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware('auth.role:Dokter')->prefix('dokter')->group(function () {
         Route::get('/', [DokterController::class, 'index'])->name('dokter.index');
+        Route::get('/detail', [DokterController::class, 'detail'])->name('dokter.detail');
+        Route::get('/saran', [DokterController::class, 'saran'])->name('dokter.saran');
     });
 
 
@@ -53,6 +55,10 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware('auth.role:Pasien')->prefix('pasien')->group(function () {
         Route::get('/', [PasienController::class, 'index'])->name('pasien.index');
+        Route::get('/olahraga', [PasienController::class, 'olahraga'])->name('pasien.olahraga');
+        Route::get('/diet', [PasienController::class, 'diet'])->name('pasien.diet');
+        Route::get('/obat', [PasienController::class, 'obat'])->name('pasien.obat');
+        Route::get('/gula-darah', [PasienController::class, 'gulaDarah'])->name('pasien.gulaDarah');
     });
 });
 

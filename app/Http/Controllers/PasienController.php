@@ -11,4 +11,20 @@ class PasienController extends Controller
     {
         return Inertia::render('Pasien/IndexPasien');
     }
+    public function olahraga()
+    {
+        return Inertia::render('Pasien/Olahraga');
+    }
+    public function diet()
+    {
+        return Inertia::render('Pasien/Diet');
+    }
+    public function obat()
+    {
+        return Inertia::render('Pasien/Obat');
+    }
+    public function gulaDarah()
+    {
+        return Inertia::render('Pasien/GulaDarah');
+    }
 }
