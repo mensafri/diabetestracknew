@@ -3,7 +3,7 @@ import TextInput from "@/Components/TextInput";
 export default function Patients() {
     const searchIcon = `${window.location.pathname}storage/assets/img/search.svg`
 
-    console.log(searchIcon)
+        
   return (
     <>
         <div className="bg-white w-5/6 rounded-md py-10 px-10">

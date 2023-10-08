@@ -10,6 +10,7 @@ export default function RegisterPerawat() {
     const { data, setData, post, processing, errors, reset } = useForm({
         full_name: '',
         username: '',
+        role: 'Pasien',
         email: '',
         password: '',
         password_confirmation: '',
@@ -24,7 +25,7 @@ export default function RegisterPerawat() {
     const submit = (e) => {
         e.preventDefault();
 
-        post(route('admin.create'));
+        post(route('perawat.create'));
     };
 
     return (
@@ -50,7 +51,7 @@ export default function RegisterPerawat() {
                 </div>
 
                 <div className="mt-4">
-                    <InputLabel htmlFor="username" value="Username" />
+                    <InputLabel htmlFor="username" value="No Rekam Medis" />
 
                     <TextInput
                         id="username"
