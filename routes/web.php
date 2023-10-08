@@ -48,6 +48,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/', [PerawatController::class, 'index'])->name('perawat.index');
         Route::post('/create', [PerawatController::class, 'create'])->name('perawat.create');
         Route::get('/list-pasien', [PerawatController::class, 'list'])->name('perawat.list');
+        Route::get('/detail', [PerawatController::class, 'detail'])->name('perawat.detail');
     });
 
     Route::middleware('auth.role:Pasien')->prefix('pasien')->group(function () {
