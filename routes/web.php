@@ -37,13 +37,20 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/dokter', [DokterController::class, 'index'])->name('dokter.index');
+    Route::middleware('auth.role:Dokter')->prefix('dokter')->group(function () {
+        Route::get('/', [DokterController::class, 'index'])->name('dokter.index');
+    });
 
-    Route::get('/perawat', [PerawatController::class, 'index'])->name('perawat.index');
-    Route::post('/perawat/create', [PerawatController::class, 'create'])->name('perawat.create');
-    Route::get('/perawat/list-pasien', [PerawatController::class, 'list'])->name('perawat.list');
 
-    Route::get('/pasien', [PasienController::class, 'index'])->name('pasien.index');
+    Route::middleware('auth.role:Perawat')->prefix('perawat')->group(function () {
+        Route::get('/', [PerawatController::class, 'index'])->name('perawat.index');
+        Route::post('/create', [PerawatController::class, 'create'])->name('perawat.create');
+        Route::get('/list-pasien', [PerawatController::class, 'list'])->name('perawat.list');
+    });
+
+    Route::middleware('auth.role:Pasien')->prefix('pasien')->group(function () {
+        Route::get('/', [PasienController::class, 'index'])->name('pasien.index');
+    });
 });
 
 require __DIR__ . '/auth.php';

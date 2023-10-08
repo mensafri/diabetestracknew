@@ -50,6 +50,7 @@ class PerawatController extends Controller
     }
     public function list()
     {
-        return Inertia::render('Perawat/Patients');
+        $list_pasien = Pasien::all();
+        return Inertia::render('Perawat/Patients', ['list_pasien' => $list_pasien]);
     }
 }
