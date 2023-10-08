@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/dashboard';
+    public const HOME = '/admin';
     public const DOKTER = '/dokter';
     public const PERAWAT = '/perawat';
     public const PASIEN = '/pasien';

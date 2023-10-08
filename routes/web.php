@@ -30,8 +30,10 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
-    Route::post('/dashboar/create', [AdminController::class, 'create'])->name('admin.create');
+    Route::middleware('auth.role:Admin')->prefix('admin')->group(function () {
+        Route::get('/', [AdminController::class, 'index'])->name('dashboard');
+        Route::post('/create', [AdminController::class, 'create'])->name('admin.create');
+    });
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
