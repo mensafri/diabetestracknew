@@ -1,30 +1,59 @@
 
-export default function IndexPerawat() {
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import { Head, Link } from '@inertiajs/react';
+import RegisterPerawat from './RegisterPerawat';
+import Patients from './Patients';
+
+export default function IndexPerawat({auth}) {
   return (
     <>
-        <AuthenticatedLayout
+       <AuthenticatedLayout
             user={auth.user}
         >
             <Head title="Dashboard" />
 
             <div className="bg-blue-300 flex">
                <div className="bg-white w-1/6 min-h-screen">
-                    <div className="menu py-6 px-5 bg-gray-100">
-                        Create Account
+                    <div className="menu py-4 px-5 bg-gray-100">
+                      <Link href={''}
+                          active={route().current('perawat')}
+                        >
+                          Create Account
+                      </Link>
+                    </div>
+                    <div className="menu py-4 px-5">
+                      <Link href=''      
+                        >
+                          Patients
+                      </Link>
+                    </div>
+                    <div className="menu py-4 px-5">
+                      <Link href='' 
+                        >
+                          Doctors
+                      </Link>
+                    </div>
+                    <div className="menu py-4 px-5">
+                      <Link href='' 
+                        >
+                         Nurse
+                      </Link>
                     </div>
                </div>
-               <div className=" bg-gray-100 mt-20 items-center py-8 py-8 w-1/2">
-                    <div className="flex justify-center">
-                        <RegisterAdmin/>
-                    </div>
+               <div className="mt-20 items-center w-full">
+                <div className=" flex justify-center">
+                    <RegisterPerawat/>
+                </div>
                </div>
-               
-
             </div>
           
 
 
         </AuthenticatedLayout>
+
+
+      
+      
     </>
   )
 }

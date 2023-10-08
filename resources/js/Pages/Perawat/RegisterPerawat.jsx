@@ -6,11 +6,10 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
 
-export default function RegisterAdmin() {
+export default function RegisterPerawat() {
     const { data, setData, post, processing, errors, reset } = useForm({
         full_name: '',
         username: '',
-        role: '',
         email: '',
         password: '',
         password_confirmation: '',
@@ -30,7 +29,9 @@ export default function RegisterAdmin() {
 
     return (
       <>
-        <form onSubmit={submit}>
+        <div className="bg-gray-100 w-1/2 py-10 px-10 rounded-md">
+            <h3 className="text-xl font-semibold text-center mb-10">Create Account</h3>
+            <form onSubmit={submit}>
                 <div>
                     <InputLabel htmlFor="full_name" value="Full Name" />
 
@@ -65,24 +66,7 @@ export default function RegisterAdmin() {
                     <InputError message={errors.username} className="mt-2" />
                 </div>
 
-                <div className="mt-4">
-                    <InputLabel htmlFor="role" value="Role" />
-                    <select
-                        id="role"
-                        name="role"
-                        value={data.role}
-                        className="mt-1 block w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
-                        onChange={(e) => setData('role', e.target.value)}
-                        required
-                    >
-                        <option value="" disabled>Select Role</option>
-                        <option value="Admin">Admin</option>
-                        <option value="Dokter">Dokter</option>
-                        <option value="Perawat">Perawat</option>
-                        <option value="Pasien">Pasien</option>
-                    </select>
-                    <InputError message={errors.role} className="mt-2" />
-                </div>
+                
 
                 <div className="mt-4">
                     <InputLabel htmlFor="email" value="Email" />
@@ -148,6 +132,8 @@ export default function RegisterAdmin() {
                     </PrimaryButton>
                 </div>
             </form>
+        </div>
+        
       </>
     );
 }
