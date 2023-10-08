@@ -40,6 +40,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/dokter', [DokterController::class, 'index'])->name('dokter.index');
 
     Route::get('/perawat', [PerawatController::class, 'index'])->name('perawat.index');
+    Route::post('/perawat/create', [PerawatController::class, 'create'])->name('perawat.create');
+    Route::get('/perawat/list-pasien', [PerawatController::class, 'list'])->name('perawat.list');
 
     Route::get('/pasien', [PasienController::class, 'index'])->name('pasien.index');
 });
