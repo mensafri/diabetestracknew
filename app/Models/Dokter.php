@@ -9,6 +9,9 @@ class Dokter extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+    protected $appends = [
+        'nama'
+    ];
     public function pasien()
     {
         return $this->hasMany(Pasien::class, 'pasien_id', 'id');
@@ -16,5 +19,9 @@ class Dokter extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'users_id', 'id');
+    }
+    public function getNamaAttribute()
+    {
+        return $this->user->full_name;
     }
 }

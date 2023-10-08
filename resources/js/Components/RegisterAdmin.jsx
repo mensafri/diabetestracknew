@@ -5,9 +5,10 @@ import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
+import { Transition } from '@headlessui/react';
 
 export default function RegisterAdmin() {
-    const { data, setData, post, processing, errors, reset } = useForm({
+    const { data, setData, post, processing, errors, reset, recentlySuccessful } = useForm({
         full_name: '',
         username: '',
         role: '',
@@ -29,8 +30,8 @@ export default function RegisterAdmin() {
     };
 
     return (
-      <>
-        <form onSubmit={submit}>
+        <>
+            <form onSubmit={submit}>
                 <div>
                     <InputLabel htmlFor="full_name" value="Full Name" />
 
@@ -140,14 +141,24 @@ export default function RegisterAdmin() {
                         href={route('login')}
                         className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
-                        
+
                     </Link>
 
                     <PrimaryButton className="ml-4" disabled={processing}>
                         Add User
                     </PrimaryButton>
+
                 </div>
+                <Transition
+                    show={recentlySuccessful}
+                    enter="transition ease-in-out"
+                    enterFrom="opacity-0"
+                    leave="transition ease-in-out"
+                    leaveTo="opacity-0"
+                >
+                    <p className="text-sm text-gray-600">Akun Berhasil Dibuat.</p>
+                </Transition>
             </form>
-      </>
+        </>
     );
 }

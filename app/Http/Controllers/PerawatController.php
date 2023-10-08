@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dokter;
 use App\Models\Pasien;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -16,7 +17,8 @@ class PerawatController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Perawat/IndexPerawat');
+        $list_dokter = Dokter::all();
+        return Inertia::render('Perawat/IndexPerawat', ['list_dokter' => $list_dokter]);
     }
     public function create(Request $request): RedirectResponse
     {
@@ -37,7 +39,7 @@ class PerawatController extends Controller
         ]);
 
         Pasien::create([
-            'users_id' => $request->role
+            'users_id' => $user['id']
         ]);
 
         event(new Registered($user));
