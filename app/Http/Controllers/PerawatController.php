@@ -28,6 +28,7 @@ class PerawatController extends Controller
             'role' => 'required|string',
             'email' => 'string|email|max:255|unique:' . User::class,
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'id_dokter' => 'required'
         ]);
 
         $user = User::create([
@@ -39,6 +40,7 @@ class PerawatController extends Controller
         ]);
 
         Pasien::create([
+            'dokter_id' => $request->id_dokter,
             'users_id' => $user['id']
         ]);
 
