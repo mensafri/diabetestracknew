@@ -84,7 +84,7 @@ export default function RegisterPerawat({ list_dokter }) {
                         >
                             {list_dokter.map((dokter) => <option value={dokter.id} key={dokter.id}>{dokter.nama}</option>)}
                         </select>
-                        <InputError message={errors.role} className="mt-2" />
+                        <InputError message={errors.id_dokter} className="mt-2" />
                     </div>
 
                     <div className="mt-4">
@@ -120,7 +120,7 @@ export default function RegisterPerawat({ list_dokter }) {
 
                         <InputError message={errors.password} className="mt-2" />
                     </div>
-                    
+
 
                     <div className="mt-4">
                         <InputLabel htmlFor="password_confirmation" value="Confirm Password" />
@@ -137,7 +137,7 @@ export default function RegisterPerawat({ list_dokter }) {
                         />
 
                         <InputError message={errors.password_confirmation} className="mt-2" />
-                    </div> 
+                    </div>
 
                     <div className="flex items-center justify-end mt-10">
                         <Link
