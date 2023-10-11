@@ -6,6 +6,7 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
 import { Transition } from '@headlessui/react';
+import Uploader from '@/Components/Uploader';
 
 export default function RegisterPerawat({ list_dokter }) {
     const { data, setData, post, processing, errors, reset, recentlySuccessful } = useForm({
@@ -50,6 +51,9 @@ export default function RegisterPerawat({ list_dokter }) {
                         />
 
                         <InputError message={errors.full_name} className="mt-2" />
+                    </div>
+                    <div className="mt-4">
+                        <Uploader/>
                     </div>
 
                     <div className="mt-4">
@@ -116,6 +120,7 @@ export default function RegisterPerawat({ list_dokter }) {
 
                         <InputError message={errors.password} className="mt-2" />
                     </div>
+                    
 
                     <div className="mt-4">
                         <InputLabel htmlFor="password_confirmation" value="Confirm Password" />
@@ -132,7 +137,7 @@ export default function RegisterPerawat({ list_dokter }) {
                         />
 
                         <InputError message={errors.password_confirmation} className="mt-2" />
-                    </div>
+                    </div> 
 
                     <div className="flex items-center justify-end mt-10">
                         <Link
