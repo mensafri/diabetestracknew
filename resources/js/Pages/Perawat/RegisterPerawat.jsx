@@ -33,7 +33,7 @@ export default function RegisterPerawat({ list_dokter }) {
 
     return (
         <>
-            <div className="bg-gray-100 w-1/2 py-10 px-10 rounded-md">
+            <div className="bg-gray-100 sm:w-1/2 py-10 px-10 rounded-md">
                 <h3 className="text-xl font-semibold text-center mb-10">Create Account</h3>
                 <form onSubmit={submit}>
                     <div>
@@ -53,6 +53,7 @@ export default function RegisterPerawat({ list_dokter }) {
                         <InputError message={errors.full_name} className="mt-2" />
                     </div>
                     <div className="mt-4">
+                        <InputLabel htmlFor="image" value="Image" />
                         <Uploader/>
                     </div>
 

@@ -6,6 +6,7 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
 import { Transition } from '@headlessui/react';
+import Uploader from './Uploader';
 
 export default function RegisterAdmin() {
     const { data, setData, post, processing, errors, reset, recentlySuccessful } = useForm({
@@ -47,6 +48,10 @@ export default function RegisterAdmin() {
                     />
 
                     <InputError message={errors.full_name} className="mt-2" />
+                </div>
+                <div className="mt-4">
+                    <InputLabel htmlFor="image" value="Photo" />
+                    <Uploader/>
                 </div>
 
                 <div className="mt-4">
