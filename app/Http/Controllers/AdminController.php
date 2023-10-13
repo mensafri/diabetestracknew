@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dokter;
+use App\Models\Pasien;
 use App\Models\Perawat;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -50,5 +51,20 @@ class AdminController extends Controller
         event(new Registered($user));
 
         return redirect(RouteServiceProvider::HOME);
+    }
+    public function listDokter()
+    {
+        $list_dokter = Dokter::all();
+        return Inertia::render('Admin/Dokters', ['list_dokter' => $list_dokter]);
+    }
+    public function listPerawat()
+    {
+        $list_perawat = Perawat::all();
+        return Inertia::render('Admin/Perawats', ['list_perawat' => $list_perawat]);
+    }
+    public function listPasien()
+    {
+        $list_pasien = Pasien::all();
+        return Inertia::render('Admin/Pasiens', ['list_pasien' => $list_pasien]);
     }
 }

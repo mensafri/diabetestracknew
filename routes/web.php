@@ -33,6 +33,9 @@ Route::middleware('auth')->group(function () {
     Route::middleware('auth.role:Admin')->prefix('admin')->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('dashboard');
         Route::post('/create', [AdminController::class, 'create'])->name('admin.create');
+        Route::post('/list-dokter', [AdminController::class, 'listDokter'])->name('admin.dokter');
+        Route::post('/list-perawat', [AdminController::class, 'listPerawat'])->name('admin.perawat');
+        Route::post('/list-pasien', [AdminController::class, 'listPasien'])->name('admin.pasien');
     });
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
