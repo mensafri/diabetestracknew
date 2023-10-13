@@ -3,7 +3,8 @@ import SidebarNavDokter from '@/Components/SidebarNavDokter';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 
-export default function IndexDokter({auth}) {
+export default function IndexDokter({auth, list_pasien}) {
+    console.log(list_pasien);
   return (
     <>
         <AuthenticatedLayout
@@ -15,7 +16,7 @@ export default function IndexDokter({auth}) {
                     <SidebarNavDokter/>
                     <div className="mt-20 items-center w-full">
                         <div className=" flex justify-center">
-                            <ListPasien/>
+                            <ListPasien list_pasien={list_pasien}/>
                         </div>
                     </div>
                 </div>
