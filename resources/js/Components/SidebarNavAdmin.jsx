@@ -2,7 +2,10 @@ import { Link } from "@inertiajs/react";
 
 
 const navigation = [
-  {name: 'Create Account', href: '/admin'},
+  {name: 'Buat Akun', href: '/admin'},
+  {name: 'Pasien', href: '/admin/list-pasien'},
+  {name: 'Dokter', href: '/admin/list-dokter'},
+  {name: 'Perawat', href: '/admin/list-Perawat'},
 ];
 
 export default function SidebarNavAdmin() {
@@ -13,15 +16,15 @@ export default function SidebarNavAdmin() {
 
           {navigation.map((item) => (
           <div key={item.name}
-              className={`py-4 px-3 
-                ${window.location.pathname === item.href 
-                ? 'bg-gray-200' 
+              className={`py-4 px-3
+                ${window.location.pathname === item.href
+                ? 'bg-gray-200'
                 : 'bg-white hover:bg-gray-200'}`}
             >
             <Link
               key={item.name}
               href={item.href}
-              
+
             >
               {item.name}
             </Link>

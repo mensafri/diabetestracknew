@@ -1,5 +1,5 @@
 import { Head, Link } from "@inertiajs/react";
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import LayoutPasien from '@/Layouts/LayoutPasien';
 
 
 export default function({auth}) {
@@ -10,18 +10,18 @@ export default function({auth}) {
     const glucose = `/storage/assets/img/glucose.svg`
     return(
         <>
-            <AuthenticatedLayout user={auth.user}>
+            <LayoutPasien user={auth.user}>
                 <Head title="Home"/>
-                
+
                 <div className="bg-blue-300 min-h-screen flex justify-center ">
                     <div className="py-20 md:w-3/5 ">
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16  w-full">
                             <div class="row-span-2 col-span-2 bg-white rounded-2xl py-6 px-6 md:py-8 md:px-10">
-                               
+
                                 <img src={profile3} alt="" className="w-28 md:w-52"/>
                                 <h3 className="mt-10 text-2xl font-semibold">Ahmad Fauzan</h3>
                                 <p>Dr. <span>Amizah</span></p>
-                                
+
                             </div>
                             <div class="col-span-1 bg-white rounded-2xl py-8 px-4 text-center">
                                 <Link href="/pasien/diet">
@@ -62,13 +62,13 @@ export default function({auth}) {
                             </div>
                             <div className="py-6 px-8 saran-dokter">
                                 <h4> Perubahan gaya hidup mungkin diperlukan, termasuk mengatur pola makan dan meningkatkan aktivitas fisik. Ini adalah langkah penting untuk menjaga kesehatan Anda </h4>
-                                
+
                             </div>
                         </div>
                     </div>
-                
+
                 </div>
-            </AuthenticatedLayout>
+            </LayoutPasien>
         </>
     )
 }

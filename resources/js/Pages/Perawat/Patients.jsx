@@ -5,7 +5,7 @@ import TextInput from "@/Components/TextInput";
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link } from '@inertiajs/react';
 
-export default function Patient({ auth, list_pasien }) {
+export default function Patient({ auth, list_pasien, href }) {
     const searchIcon = `/storage/assets/img/search.svg`
     const profile1 = `/storage/assets/img/profile1.png`
     const info = `/storage/assets/img/info.svg`
@@ -29,7 +29,7 @@ export default function Patient({ auth, list_pasien }) {
                                     </div>
                                 </div>
                                 <div className="bg-gray-100 mt-10 py-8 px-6 rounded-2xl">
-                                    <ListPasien list_pasien={list_pasien} />
+                                    <ListPasien href={"/perawat/detail"} list_pasien={list_pasien} />
                                 </div>
                             </div>
                         </div>
