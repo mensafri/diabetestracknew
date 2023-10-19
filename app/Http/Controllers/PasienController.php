@@ -21,7 +21,8 @@ class PasienController extends Controller
     {
         $pasien_id = Auth::user()->id;
         $pasien = Pasien::where('users_id', $pasien_id)->get();
-        $saran = Saran::where('pasien_id', $pasien_id)->get();
+        $id_pasien = Pasien::where('users_id', $pasien_id)->pluck('id');
+        $saran = Saran::select('teks')->where('pasien_id', $id_pasien[0])->first();
         return Inertia::render('Pasien/IndexPasien', ['pasien' => $pasien, 'saran' => $saran]);
     }
     public function olahraga()
