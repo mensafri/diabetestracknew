@@ -33,7 +33,6 @@ export default function Perawat({ auth, list_pasien}) {
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

@@ -33,9 +33,9 @@ Route::middleware('auth')->group(function () {
     Route::middleware('auth.role:Admin')->prefix('admin')->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('dashboard');
         Route::post('/create', [AdminController::class, 'create'])->name('admin.create');
-        Route::post('/list-dokter', [AdminController::class, 'listDokter'])->name('admin.dokter');
-        Route::post('/list-perawat', [AdminController::class, 'listPerawat'])->name('admin.perawat');
-        Route::post('/list-pasien', [AdminController::class, 'listPasien'])->name('admin.pasien');
+        Route::get('/list-dokter', [AdminController::class, 'listDokter'])->name('admin.dokter');
+        Route::get('/list-perawat', [AdminController::class, 'listPerawat'])->name('admin.perawat');
+        Route::get('/list-pasien', [AdminController::class, 'listPasien'])->name('admin.pasien');
     });
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -44,7 +44,7 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware('auth.role:Dokter')->prefix('dokter')->group(function () {
         Route::get('/', [DokterController::class, 'index'])->name('dokter.index');
-        Route::get('/detail', [DokterController::class, 'detail'])->name('dokter.detail');
+        Route::get('/detail/{pasien}', [DokterController::class, 'detail'])->name('dokter.detail');
         Route::get('/saran', [DokterController::class, 'saran'])->name('dokter.saran');
     });
 
