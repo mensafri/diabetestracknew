@@ -49,20 +49,19 @@ class PerawatController extends Controller
 
             event(new Registered($user));
             DB::commit();
+            return redirect(RouteServiceProvider::PERAWAT);
         } catch (\Throwable $th) {
             DB::rollBack();
             throw $th;
         }
-
-        return redirect(RouteServiceProvider::PERAWAT);
     }
     public function list()
     {
         $list_pasien = Pasien::all();
         return Inertia::render('Perawat/Patients', ['list_pasien' => $list_pasien]);
     }
-    public function detail()
+    public function detail(Pasien $pasien)
     {
-        return Inertia::render('Perawat/Detail');
+        return Inertia::render('Perawat/Detail', ['pasien' => $pasien]);
     }
 }

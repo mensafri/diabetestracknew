@@ -15,7 +15,8 @@ class Pasien extends Model
     ];
     protected $appends = [
         'nama_dokter',
-        'nama'
+        'nama',
+        'rekam_medis'
     ];
     public function user()
     {
@@ -32,5 +33,9 @@ class Pasien extends Model
     public function getNamaDokterAttribute()
     {
         return $this->dokter->nama;
+    }
+    public function getRekamMedisAttribute()
+    {
+        return $this->user->username;
     }
 }

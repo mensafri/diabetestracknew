@@ -14,6 +14,7 @@ export default function RegisterPerawat({ list_dokter }) {
         username: '',
         role: 'Pasien',
         id_dokter: '',
+        // foto_profil: '',
         email: '',
         password: '',
         password_confirmation: '',
@@ -52,10 +53,10 @@ export default function RegisterPerawat({ list_dokter }) {
 
                         <InputError message={errors.full_name} className="mt-2" />
                     </div>
-                    <div className="mt-4">
-                        <InputLabel htmlFor="image" value="Image" />
-                        <Uploader/>
-                    </div>
+                    {/* <div className="mt-4">
+                        <InputLabel htmlFor="image" value="Foto Profil" />
+                        <Uploader name="foto_profil" value={data.foto_profil} autoComplete="foto_pofil" />
+                    </div> */}
 
                     <div className="mt-4">
                         <InputLabel htmlFor="username" value="No Rekam Medis" />

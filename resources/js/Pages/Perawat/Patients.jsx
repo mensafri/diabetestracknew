@@ -29,7 +29,7 @@ export default function Patient({ auth, list_pasien, href }) {
                                     </div>
                                 </div>
                                 <div className="bg-gray-100 mt-10 py-8 px-6 rounded-2xl">
-                                    <ListPasien href={"/perawat/detail"} list_pasien={list_pasien} />
+                                    <ListPasien list_pasien={list_pasien} />
                                 </div>
                             </div>
                         </div>

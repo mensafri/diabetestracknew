@@ -53,15 +53,19 @@ Route::middleware('auth')->group(function () {
         Route::get('/', [PerawatController::class, 'index'])->name('perawat.index');
         Route::post('/create', [PerawatController::class, 'create'])->name('perawat.create');
         Route::get('/list-pasien', [PerawatController::class, 'list'])->name('perawat.list');
-        Route::get('/detail', [PerawatController::class, 'detail'])->name('perawat.detail');
+        Route::get('/detail/{pasien}', [PerawatController::class, 'detail'])->name('perawat.detail');
     });
 
     Route::middleware('auth.role:Pasien')->prefix('pasien')->group(function () {
         Route::get('/', [PasienController::class, 'index'])->name('pasien.index');
         Route::get('/olahraga', [PasienController::class, 'olahraga'])->name('pasien.olahraga');
+        Route::post('/olahraga/create', [PasienController::class, 'createOlahraga'])->name('pasien.createOlahraga');
         Route::get('/diet', [PasienController::class, 'diet'])->name('pasien.diet');
+        Route::post('/diet/create', [PasienController::class, 'createDiet'])->name('pasien.createDiet');
         Route::get('/obat', [PasienController::class, 'obat'])->name('pasien.obat');
+        Route::post('/obat/create', [PasienController::class, 'createObat'])->name('pasien.createObat');
         Route::get('/gula-darah', [PasienController::class, 'gulaDarah'])->name('pasien.gulaDarah');
+        Route::post('/gula-darah/create', [PasienController::class, 'createGulaDarah'])->name('pasien.createGulaDarah');
     });
 });
 

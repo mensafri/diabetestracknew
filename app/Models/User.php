@@ -35,6 +35,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'pasien'
+    ];
+    protected $appends = [
+        'pasien_data'
     ];
 
     /**
@@ -46,4 +50,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function pasien()
+    {
+        return $this->hasMany(Pasien::class, 'users_id', 'id');
+    }
+    public function getPasienDataAttribute()
+    {
+        return $this->pasien;
+    }
 }
