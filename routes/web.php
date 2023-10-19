@@ -46,6 +46,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/', [DokterController::class, 'index'])->name('dokter.index');
         Route::get('/detail/{pasien}', [DokterController::class, 'detail'])->name('dokter.detail');
         Route::get('/saran', [DokterController::class, 'saran'])->name('dokter.saran');
+        Route::post('/saran/create', [DokterController::class, 'createSaran'])->name('dokter.createSaran');
     });
 
 

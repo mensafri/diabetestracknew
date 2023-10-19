@@ -2,7 +2,7 @@ import { Head, Link } from "@inertiajs/react";
 import LayoutPasien from '@/Layouts/LayoutPasien';
 
 
-export default function ({ auth, pasien }) {
+export default function ({ auth, pasien, saran }) {
     const profile3 = `/storage/assets/img/profile3.png`
     const food = `/storage/assets/img/food.svg`
     const sport = `/storage/assets/img/sport.svg`
@@ -61,8 +61,7 @@ export default function ({ auth, pasien }) {
                                 <h3 className="text-xl font-semibold">Saran Dokter</h3>
                             </div>
                             <div className="py-6 px-8 saran-dokter">
-                                <h4> Perubahan gaya hidup mungkin diperlukan, termasuk mengatur pola makan dan meningkatkan aktivitas fisik. Ini adalah langkah penting untuk menjaga kesehatan Anda </h4>
-
+                                <h4> {saran.teks} </h4>
                             </div>
                         </div>
                     </div>

@@ -7,6 +7,7 @@ use App\Models\GulaDarah;
 use App\Models\Obat;
 use App\Models\Olahraga;
 use App\Models\Pasien;
+use App\Models\Saran;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
@@ -20,7 +21,8 @@ class PasienController extends Controller
     {
         $pasien_id = Auth::user()->id;
         $pasien = Pasien::where('users_id', $pasien_id)->get();
-        return Inertia::render('Pasien/IndexPasien', ['pasien' => $pasien]);
+        $saran = Saran::where('pasien_id', $pasien_id)->get();
+        return Inertia::render('Pasien/IndexPasien', ['pasien' => $pasien, 'saran' => $saran]);
     }
     public function olahraga()
     {
