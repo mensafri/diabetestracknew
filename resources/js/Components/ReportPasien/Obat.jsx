@@ -1,6 +1,7 @@
 
-export default function Obat() {
+export default function Obat({ dataObat }) {
     const obat = `/storage/assets/img/obat.png`
+    const { Pagi, Sore, Malam } = dataObat
     return (
         <div className="bg-white mt-10 rounded-2xl">
             <div className="bg-gray-100 rounded-t-2xl py-6 px-8">
@@ -12,7 +13,7 @@ export default function Obat() {
                     <div className="flex flex-col md:flex-row gap-6">
                         <img src={obat} alt="" />
                         <div className="">
-                            <h4>Jenis Obat : Senam Pagi</h4>
+                            <h4>Jenis Obat : {Pagi !== null ? Pagi.jenis_obat : 'Pasien Belum Mengisi Laporan Obat'}</h4>
                         </div>
                     </div>
                 </div>
@@ -21,7 +22,7 @@ export default function Obat() {
                     <div className="flex flex-col md:flex-row gap-6">
                         <img src={obat} alt="" />
                         <div className="">
-                            <h4>Jenis Obat : Senam Pagi</h4>
+                            <h4>Jenis Obat : {Sore !== null ? Sore.jenis_obat : 'Pasien Belum Mengisi Laporan Obat'}</h4>
                         </div>
                     </div>
                 </div>
@@ -30,7 +31,7 @@ export default function Obat() {
                     <div className="flex flex-col md:flex-row gap-6">
                         <img src={obat} alt="" />
                         <div className="">
-                            <h4>Jenis Obat : Senam Pagi</h4>
+                            <h4>Jenis Obat : {Malam !== null ? Malam.jenis_obat : 'Pasien Belum Mengisi Laporan Obat'}</h4>
                         </div>
                     </div>
                 </div>

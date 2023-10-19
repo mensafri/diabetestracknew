@@ -1,4 +1,4 @@
-export default function Olahraga() {
+export default function Olahraga({ dataOlahraga }) {
     const olahraga = `/storage/assets/img/olahraga.png`
     return (
         <div className="bg-white mt-10 rounded-2xl">
@@ -8,8 +8,8 @@ export default function Olahraga() {
             <div className="py-6 px-8 flex flex-col md:flex-row gap-10">
                 <img src={olahraga} alt="" />
                 <div className="">
-                    <h4>Jenis Olahraga : Senam Pagi</h4>
-                    <h4>Durasi : 20 Menit</h4>
+                    <h4>Jenis Olahraga : {dataOlahraga !== null ? dataOlahraga.jenis_olahraga : 'Pasien Belum Mengisi Laporan Olahraga'}</h4>
+                    <h4>Durasi : {dataOlahraga !== null ? dataOlahraga.waktu : 'Pasien Belum Mengisi Laporan Olahraga'}</h4>
                 </div>
             </div>
         </div>

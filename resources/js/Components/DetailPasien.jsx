@@ -5,7 +5,18 @@ import Olahraga from "./ReportPasien/olahraga";
 import TextInput from "./TextInput";
 
 
-export default function DetailPasien() {
+export default function DetailPasien({ dataPasien }) {
+    const { olahraga, makanPagi, makanSore, makanMalam, obatPagi, obatSore, obatMalam, gulaDarah } = dataPasien;
+    const dataDiet = {
+        'Pagi': makanPagi,
+        'Sore': makanSore,
+        'Malam': makanMalam,
+    }
+    const dataObat = {
+        'Pagi': obatPagi,
+        'Sore': obatSore,
+        'Malam': obatMalam
+    }
     return (
         <div className="mt-20 sm:mt-40 mt">
             <div className="bg-white flex justify-between py-5 px-5 sm:p-9 rounded-3xl ">
@@ -23,10 +34,10 @@ export default function DetailPasien() {
                 </div>
             </div>
 
-            <Olahraga />
-            <Diet />
-            <Obat />
-            <Glukosa />
+            <Olahraga dataOlahraga={olahraga} />
+            <Diet dataDiet={dataDiet} />
+            <Obat dataObat={dataObat} />
+            <Glukosa dataGlukosa={gulaDarah} />
         </div>
     )
 }

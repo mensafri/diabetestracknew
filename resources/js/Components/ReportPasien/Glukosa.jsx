@@ -1,4 +1,4 @@
-export default function Glukosa() {
+export default function Glukosa({ dataGlukosa }) {
     const glukosa = `/storage/assets/img/glukosa.png`
     return (
         <div className="bg-white mt-10 rounded-2xl mb-10">
@@ -8,7 +8,7 @@ export default function Glukosa() {
             <div className="py-6 px-8 flex flex-col md:flex-row gap-10">
                 <img src={glukosa} alt="" />
                 <div className="">
-                    <h4>Gula darah : 250 mg/dL</h4>
+                    <h4>Gula darah : {dataGlukosa !== null ? dataGlukosa.hasil + 'mg/dL' : 'Pasien Belum Mengisi Laporan Glukosa'}</h4>
                 </div>
             </div>
         </div>

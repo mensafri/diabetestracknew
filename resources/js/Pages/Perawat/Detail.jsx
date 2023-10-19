@@ -3,9 +3,8 @@ import SidebarNavPerawat from "@/Components/SidebarNavPerawat";
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link } from '@inertiajs/react';
 
-export default function Detail({ auth, pasien }) {
+export default function Detail({ auth, pasien, dataPasien }) {
     const profile2 = `/storage/assets/img/profile2.png`
-    console.log(pasien);
     return (
         <>
             <AuthenticatedLayout user={auth.user}>
@@ -28,7 +27,7 @@ export default function Detail({ auth, pasien }) {
                                         </div>
                                     </div>
                                 </div>
-                                <DetailPasien />
+                                <DetailPasien dataPasien={dataPasien} />
                             </div>
                         </div>
                     </div>

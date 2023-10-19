@@ -1,6 +1,7 @@
 
-export default function Diet() {
+export default function Diet({ dataDiet }) {
     const diet = `/storage/assets/img/diet.png`
+    const { Pagi, Sore, Malam } = dataDiet
     return (
         <div className="bg-white mt-10 rounded-2xl">
             <div className="bg-gray-100 rounded-t-2xl py-6 px-8">
@@ -12,8 +13,8 @@ export default function Diet() {
                     <div className="flex flex-col md:flex-row gap-6">
                         <img src={diet} alt="" />
                         <div className="">
-                            <h4>Jenis Olahraga : Senam Pagi</h4>
-                            <h4>Durasi : 20 Menit</h4>
+                            <h4>Jenis Makanan : {Pagi !== null ? Pagi.jenis_makanan : 'Pasien Belum Mengisi Laporan Diet'}</h4>
+                            <h4>Porsi : {Pagi !== null ? Pagi.porsi : 'Pasien Belum Mengisi Laporan Diet'}</h4>
                         </div>
                     </div>
                 </div>
@@ -22,8 +23,8 @@ export default function Diet() {
                     <div className="flex flex-col md:flex-row gap-6">
                         <img src={diet} alt="" />
                         <div className="">
-                            <h4>Jenis Olahraga : Senam Pagi</h4>
-                            <h4>Durasi : 20 Menit</h4>
+                            <h4>Jenis Makanan : {Sore !== null ? Sore.jenis_makanan : 'Pasien Belum Mengisi Laporan Diet'}</h4>
+                            <h4>Porsi : {Sore !== null ? Sore.porsi : 'Pasien Belum Mengisi Laporan Diet'}</h4>
                         </div>
                     </div>
                 </div>
@@ -32,8 +33,8 @@ export default function Diet() {
                     <div className="flex flex-col md:flex-row gap-6">
                         <img src={diet} alt="" />
                         <div className="">
-                            <h4>Jenis Olahraga : Senam Pagi</h4>
-                            <h4>Durasi : 20 Menit</h4>
+                            <h4>Jenis Makanan : {Malam !== null ? Malam.jenis_makanan : 'Pasien Belum Mengisi Laporan Diet'}</h4>
+                            <h4>Porsi : {Malam !== null ? Malam.porsi : 'Pasien Belum Mengisi Laporan Diet'}</h4>
                         </div>
                     </div>
                 </div>
