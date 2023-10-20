@@ -5,7 +5,6 @@ export default function ListPasien({ list_pasien }) {
     const profile1 = `/storage/assets/img/profile1.png`
     const info = `/storage/assets/img/info.svg`
 
-    console.log(list_pasien);
     return (
         <>
             <div className="bg-gray-100 py-8 px-6 rounded-2xl">

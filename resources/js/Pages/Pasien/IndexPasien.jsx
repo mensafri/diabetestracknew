@@ -61,7 +61,7 @@ export default function ({ auth, pasien, saran }) {
                                 <h3 className="text-base sm:text-xl font-semibold">Saran Dokter</h3>
                             </div>
                             <div className="py-6 px-8 saran-dokter">
-                                <h4 className="text-gray-700"> {saran.teks} </h4>
+                                <h4> {saran.teks !== null ? saran.teks : 'Dokter Belum Memberi Saran'} </h4>
                             </div>
                         </div>
                     </div>

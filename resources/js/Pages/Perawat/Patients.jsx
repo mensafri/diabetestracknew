@@ -5,12 +5,11 @@ import TextInput from "@/Components/TextInput";
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link } from '@inertiajs/react';
 
-export default function Patient({ auth, list_pasien, href }) {
+export default function Patient({ auth, list_pasien, }) {
     const searchIcon = `/storage/assets/img/search.svg`
     const profile1 = `/storage/assets/img/profile1.png`
     const info = `/storage/assets/img/info.svg`
 
-    console.log(list_pasien);
     return (
         <>
             <AuthenticatedLayout
