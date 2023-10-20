@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Diet;
+use App\Models\GulaDarah;
+use App\Models\Obat;
+use App\Models\Olahraga;
 use App\Models\Pasien;
 use App\Models\Saran;
 use App\Providers\RouteServiceProvider;
@@ -18,7 +22,31 @@ class DokterController extends Controller
     }
     public function detail(Pasien $pasien)
     {
-        return Inertia::render('Dokter/Detail');
+
+        $olahraga = Olahraga::query()->where('pasien_id', $pasien->id)->first();
+        $makanPagi = Diet::query()->where('pasien_id', $pasien->id)->where('waktu', 'Pagi')->first();
+        $makanSore = Diet::query()->where('pasien_id', $pasien->id)->where('waktu', 'Sore')->first();
+        $makanMalam = Diet::query()->where('pasien_id', $pasien->id)->where('waktu', 'Malam')->first();
+        $obatPagi = Obat::query()->where('pasien_id', $pasien->id)->where('waktu', 'Pagi')->first();
+        $obatSore = Obat::query()->where('pasien_id', $pasien->id)->where('waktu', 'Sore')->first();
+        $obatMalam = Obat::query()->where('pasien_id', $pasien->id)->where('waktu', 'Malam')->first();
+        $gulaDarah = GulaDarah::query()->where('pasien_id', $pasien->id)->first();
+
+
+        $dataPasien = [
+            'olahraga' => $olahraga,
+            'makanPagi' => $makanPagi,
+            'makanSore' => $makanSore,
+            'makanMalam' => $makanMalam,
+            'obatPagi' => $obatPagi,
+            'obatSore' => $obatSore,
+            'obatMalam' => $obatMalam,
+            'gulaDarah' => $gulaDarah
+        ];
+        return Inertia::render('Dokter/Detail', [
+            'pasien' => $pasien,
+            'dataPasien' => $dataPasien
+        ]);
     }
     public function saran()
     {

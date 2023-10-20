@@ -6,7 +6,7 @@ import TextInput from "@/Components/TextInput";
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link } from '@inertiajs/react';
 
-export default function Detail({ auth }) {
+export default function Detail({ auth, dataPasien }) {
     const searchIcon = `/storage/assets/img/search.svg`
     const profile1 = `/storage/assets/img/profile1.png`
     const profile2 = `/storage/assets/img/profile2.png`
@@ -41,7 +41,7 @@ export default function Detail({ auth }) {
                                         </Link>
                                     </div>
                                 </div>
-                                <DetailPasien />
+                                <DetailPasien dataPasien={dataPasien} />
                             </div>
                         </div>
                     </div>
