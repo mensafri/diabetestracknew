@@ -1,11 +1,12 @@
-import ListPasien from "@/Components/ListPasien"
+
 import SidebarNavAdmin from "@/Components/SidebarNavAdmin"
 import TextInput from "@/Components/TextInput"
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from "@inertiajs/react"
 
-export default function Perawat({ auth, list_pasien}) {
+export default function Perawats({ auth, list_pasien}) {
     const profile1 = `/storage/assets/img/profile1.png`
+    const searchIcon = `/storage/assets/img/search.svg`
     const info = `/storage/assets/img/info.svg`
     return (
         <AuthenticatedLayout

@@ -5,7 +5,7 @@ const navigation = [
   {name: 'Buat Akun', href: '/admin'},
   {name: 'Pasien', href: '/admin/list-pasien'},
   {name: 'Dokter', href: '/admin/list-dokter'},
-  {name: 'Perawat', href: '/admin/list-Perawat'},
+  {name: 'Perawat', href: '/admin/list-perawat'},
 ];
 
 export default function SidebarNavAdmin() {

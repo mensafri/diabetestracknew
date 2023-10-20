@@ -6,6 +6,7 @@ import { Head } from "@inertiajs/react"
 
 export default function Pasiens({auth, list_pasien, href}) {
     const profile1 = `/storage/assets/img/profile1.png`
+    const searchIcon = `/storage/assets/img/search.svg`
     const info = `/storage/assets/img/info.svg`
     return (
             <AuthenticatedLayout
