@@ -8,7 +8,7 @@ export default function Obat({ dataObat }) {
                 <h3 className="text-xl font-semibold">Obat</h3>
             </div>
             <div className="py-6 px-8 flex flex-col md:flex-row gap-10">
-                <div className="bg-gray-100 py-6 px-6 rounded-xl">
+                <div className="bg-gray-100 py-6 px-6 rounded-xl sm:w-1/3">
                     <h3 className="text-lg font-semibold mb-4">Pagi</h3>
                     <div className="flex flex-col md:flex-row gap-6">
                         <img src={obat} alt="" />
@@ -17,7 +17,7 @@ export default function Obat({ dataObat }) {
                         </div>
                     </div>
                 </div>
-                <div className="bg-gray-100 py-6 px-6 rounded-xl">
+                <div className="bg-gray-100 py-6 px-6 rounded-xl sm:w-1/3">
                     <h3 className="text-lg font-semibold mb-4">Sore</h3>
                     <div className="flex flex-col md:flex-row gap-6">
                         <img src={obat} alt="" />
@@ -26,7 +26,7 @@ export default function Obat({ dataObat }) {
                         </div>
                     </div>
                 </div>
-                <div className="bg-gray-100 py-6 px-6 rounded-xl">
+                <div className="bg-gray-100 py-6 px-6 rounded-xl sm:w-1/3">
                     <h3 className="text-lg font-semibold mb-4">Malam</h3>
                     <div className="flex flex-col md:flex-row gap-6">
                         <img src={obat} alt="" />

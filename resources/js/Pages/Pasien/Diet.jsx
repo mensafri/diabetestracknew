@@ -46,7 +46,7 @@ export default function Diet({ auth }) {
                                 <div className="mt-4">
                                     <InputLabel htmlFor="waktu" value="Waktu" />
                                     <div className="flex gap-5">
-                                        <select onChange={(e) => setData('waktu', e.target.value)} id="time-select" name="waktu" className="w-40 h-14 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                        <select onChange={(e) => setData('waktu', e.target.value)} id="time-select" name="waktu" className="w-40 h-14 bg-gray-100 border-gray-300 focus:ring-blue-500 ">
                                             <option value="Pagi">Pagi</option>
                                             <option value="Sore">Sore</option>
                                             <option value="Malam">Malam</option>

@@ -10,7 +10,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
         <>
             <Head title="Welcome" />
             <Header/>
-            <div className="relative flex justify-center items-center min-h-screen bg-dots-darker bg-center dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+            <div className="relative flex justify-center items-center min-h-screen bg-dots-darker bg-center  selection:bg-red-500 selection:text-white">
                <div className="header">
                </div>
                <div className="content">

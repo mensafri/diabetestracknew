@@ -29,17 +29,17 @@ export default function Saran({ auth, pasien }) {
                                         <div className="mt-4">
                                             <InputLabel htmlFor="pasien" value="Pilih Pasien" />
                                             <div className="flex gap-5">
-                                                <select onChange={(e) => setData('pasien', e.target.value)} value={data.pasien} id="time-select" name="pasien" className="w-40 h-14 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                <select onChange={(e) => setData('pasien', e.target.value)} value={data.pasien} id="time-select" name="pasien" className="w-40 h-14 bg-gray-100 border-gray-300 focus:ring-blue-500 ">
                                                     {pasien.map(el => <option key={el.id} value={el.id}>{el.nama}</option>)}
                                                 </select>
                                             </div>
                                         </div>
-                                        <div className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
-                                            <div className="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
+                                        <div className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 ">
+                                            <div className="px-4 py-2 bg-white rounded-t-lg ">
                                                 <label for="comment" className="sr-only">Your comment</label>
-                                                <textarea value={data.teks} onChange={(e) => setData('teks', e.target.value)} name='teks' id="comment" rows="4" className="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Tambah Saran..." required></textarea>
+                                                <textarea value={data.teks} onChange={(e) => setData('teks', e.target.value)} name='teks' id="comment" rows="4" className="w-full px-0 text-sm text-gray-900 bg-white border-0 " placeholder="Tambah Saran..." required></textarea>
                                             </div>
-                                            <div className="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
+                                            <div className="flex items-center justify-between px-3 py-2 border-t ">
                                                 <PrimaryButton className="ml-4" disabled={processing}>
                                                     Submit
                                                 </PrimaryButton>
@@ -55,7 +55,7 @@ export default function Saran({ auth, pasien }) {
                                             </div>
                                         </div>
                                     </form>
-                                    <p className="ml-auto text-xs text-gray-500 dark:text-gray-400">Remember, contributions to this topic should follow our <a href="#" className="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</p>
+                                    <p className="ml-auto text-xs text-gray-500 ">Remember, contributions to this topic should follow our <a href="#" className="text-blue-600  hover:underline">Community Guidelines</a>.</p>
                                 </div>
                             </div>
                         </div>

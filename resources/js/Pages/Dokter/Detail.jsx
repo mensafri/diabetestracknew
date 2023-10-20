@@ -31,8 +31,10 @@ export default function Detail({ auth, dataPasien }) {
                                             <h4>Umur : 40 </h4>
                                             <h4>Tanggal Lahir : 21 September : 1989</h4>
                                             <h4>Dokter : Dr. Amizah</h4>
+                                            <h4>Perawat : Nama Perawat  </h4>
                                             <h4>No Hp : 088987654567</h4>
                                             <h4>No Rekam Medis : 1234567890</h4>
+                                            
                                         </div>
                                     </div>
                                     <div className="flex justify-end w-full">
