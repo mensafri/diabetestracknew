@@ -10,6 +10,7 @@ use App\Models\Pasien;
 use App\Models\Saran;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 
@@ -17,7 +18,8 @@ class DokterController extends Controller
 {
     public function index()
     {
-        $list_pasien = Pasien::all();
+        $dokter_id = Auth::user()->id;
+        $list_pasien = Pasien::where('dokter_id', $dokter_id);
         return Inertia::render('Dokter/IndexDokter', ['list_pasien' => $list_pasien]);
     }
     public function detail(Pasien $pasien)

@@ -8,6 +8,7 @@ export default function ({ auth, pasien, saran }) {
     const sport = `/storage/assets/img/sport.svg`
     const medicine = `/storage/assets/img/medicine.svg`
     const glucose = `/storage/assets/img/glucose.svg`
+
     return (
         <>
             <LayoutPasien user={auth.user}>
@@ -61,7 +62,7 @@ export default function ({ auth, pasien, saran }) {
                                 <h3 className="text-base sm:text-xl font-semibold">Saran Dokter</h3>
                             </div>
                             <div className="py-6 px-8 saran-dokter">
-                                <h4> {saran.teks !== null ? saran.teks : 'Dokter Belum Memberi Saran'} </h4>
+                                <h4> {saran !== null ? saran.teks : 'Dokter Belum Memberi Saran'} </h4>
                             </div>
                         </div>
                     </div>

@@ -45,11 +45,11 @@ export default function Obat({ auth }) {
                                         required
                                     />
                                 </div>
-                                <div className="mt-4">
+                                <div className="mt-10">
                                     <InputLabel htmlFor="waktu" value="Waktu" />
                                     <div className="flex gap-5">
                                         <select onChange={(e) => setData('waktu', e.target.value)} id="time-select" name="waktu" className="w-40 h-14 bg-gray-100 border-gray-300 focus:ring-blue-500 ">
-                                            <option value="Pagi">Pagi</option>
+                                            <option value="Pagi">Pagii</option>
                                             <option value="Sore">Sore</option>
                                             <option value="Malam">Malam</option>
                                         </select>

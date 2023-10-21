@@ -9,8 +9,6 @@ export default function IndexDokter({ auth, list_pasien }) {
     const searchIcon = `/storage/assets/img/search.svg`
     const info = `/storage/assets/img/info.svg`
 
-    console.log(list_pasien);
-
     return (
         <>
             <AuthenticatedLayout
@@ -31,7 +29,7 @@ export default function IndexDokter({ auth, list_pasien }) {
                                 <div className="bg-gray-100 py-8 px-6 rounded-2xl">
                                     {list_pasien.map(pasien => {
                                         return (
-                                            <div className="list-pasien flex justify-between bg-white rounded-3xl py-4 px-6 mt-8">
+                                            <div className="list-pasien flex justify-between bg-white rounded-3xl py-4 px-6 mt-8" key={pasien.id}>
                                                 <div className="flex">
                                                     {/* <img className="w-14" src={profile1} alt="" /> */}
                                                     <div className="ml-6 self-center">

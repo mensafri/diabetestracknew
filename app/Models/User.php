@@ -38,7 +38,8 @@ class User extends Authenticatable
         'pasien'
     ];
     protected $appends = [
-        'pasien_data'
+        'pasien_data',
+        'dokter_data',
     ];
 
     /**
@@ -54,8 +55,16 @@ class User extends Authenticatable
     {
         return $this->hasMany(Pasien::class, 'users_id', 'id');
     }
+    public function dokter()
+    {
+        return $this->hasMany(Dokter::class, 'users_id', 'id');
+    }
     public function getPasienDataAttribute()
     {
         return $this->pasien;
+    }
+    public function getDokterDataAttribute()
+    {
+        return $this->dokter;
     }
 }
