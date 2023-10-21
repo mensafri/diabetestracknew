@@ -42,7 +42,7 @@ export default function GulaDarah({ auth }) {
                                         required
                                     />
                                 </div>
-                                <div className="mt-4">
+                                <div className="mt-4 ">
                                     <InputLabel htmlFor="image" value="Photo" />
                                     <Uploader />
                                 </div>
