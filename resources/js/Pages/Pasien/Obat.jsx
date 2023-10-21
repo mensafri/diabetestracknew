@@ -68,10 +68,10 @@ export default function Obat({ auth }) {
                                         required
                                     />
                                 </div>
-                                {/* <div className="mt-4">
+                                <div className="mt-4">
                                     <InputLabel htmlFor="image" value="Photo" />
                                     <Uploader />
-                                </div> */}
+                                </div>
                                 <div className="flex items-center justify-end mt-10">
                                     <Link
                                         href=""
